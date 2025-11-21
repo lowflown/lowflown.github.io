@@ -251,13 +251,13 @@
       <div style="font-size:13px;color:var(--muted)">Made with ✨ — Call to book</div>
     </footer>
   </div>
-      document.querySelectorAll(".card").forEach((card, i) => {
-        card.style.cursor = "pointer";
+  document.querySelectorAll(".card").forEach((card, i) => {
+    card.style.cursor = "pointer";
 
-        card.addEventListener("click", () => {
-          window.location.href = `package${i + 1}.html`;
-        });
+    card.addEventListener("click", () => {
+        window.location.href = `package${i + 1}.html`;
       });
+    });
   <script>
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
