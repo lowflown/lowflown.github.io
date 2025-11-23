@@ -225,6 +225,14 @@
     document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
 
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    document.querySelectorAll(".card").forEach((card, i) => {
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+        window.location.href = `package${i + 1}.html`;
+      });
+    });
   </script>
 </body>   
 </html>
