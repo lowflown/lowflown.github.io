@@ -266,9 +266,9 @@
     document.getElementById('yr').textContent = new Date().getFullYear();
 
     document.querySelectorAll(".card").forEach((card, i) => {
-    card.style.cursor = "pointer";
+      card.style.cursor = "pointer";
 
-    card.addEventListener("click", () => {
+      card.addEventListener("click", () => {
         window.location.href = `package${i + 1}.html`;
       });
     });
