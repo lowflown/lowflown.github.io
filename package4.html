@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Пакет — EcoFun Party</title>
+
+  <!-- SAME STYLE AS MAIN PAGE -->
+  <style>
+    :root{
+      --bg: #fff8f3;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent-1: #ff6b6b;
+      --accent-2: #ffd56b;
+      --accent-3: #6bd9ff;
+      --accent-4: #9b7bff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(28,30,33,0.08);
+      --ease: cubic-bezier(.2,.9,.3,1);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fffdf8);
+      color:#111;
+      line-height:1.45;
+    }
+    *{box-sizing:border-box}
+
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent-3),var(--accent-1));
+      color:white;font-weight:700;display:grid;place-items:center;
+      box-shadow:var(--shadow);
+    }
+    nav{display:flex;gap:18px}
+    nav a{color:#111;text-decoration:none;font-weight:600}
+    nav a.cta{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));
+      padding:10px 16px;color:#fff;border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    /* Banner */
+    .banner{
+      width:100%;height:660px;border-radius:18px;overflow:hidden;
+      box-shadow:var(--shadow);margin-bottom:32px;
+    }
+    .banner img{width:100%;height:100%;object-fit:cover;}
+
+    /* Package Content */
+    .package-card{
+      background:var(--card);
+      padding:28px;border-radius:18px;box-shadow:var(--shadow);
+    }
+    .package-card h2{margin-top:0;font-size:32px}
+    .package-card p{color:var(--muted);font-size:16px}
+
+    ul.features{
+      margin-top:16px;padding-left:18px;color:var(--muted);
+      line-height:1.5;
+    }
+
+    .price-box{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-3));
+      padding:14px 20px;border-radius:14px;
+      display:inline-block;font-size:20px;
+      font-weight:800;color:#111;margin-top:22px;
+      box-shadow:var(--shadow);
+    }
+
+    footer{
+      margin-top:36px;padding-top:18px;
+      border-top:1px dashed rgba(10,10,10,0.04);
+      color:var(--muted);display:flex;justify-content:space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo">★</div>
+        <div>
+          <h1 style="margin:0;font-size:20px">EcoFun Party</h1>
+          <p style="margin:0;font-size:13px;color:var(--muted)">
+            С нас всеки рожден ден е приключение!
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#about">За Нас</a>
+        <a href="index.html#packages">Рождени дни</a>
+        <a href="index.html#contact" class="cta">Контакти</a>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="party_jungle.jpg" alt="Package Banner">
+    </div>
+
+    <!-- PACKAGE DETAILS -->
+    <div class="package-card">
+      <h2>Пиратско приключение в кораловия риф</h2>
+      <p>
+        Приключение за малки любители на дивия свят и животните!
+        Децата влизат в ролята на изследователи, научават любопитни факти за тропическите гори, правят маски на животни, танцуват, решават загадки и преминават през опасни „реки“, пълни с крокодили, за да открия магическото цвете с лечебни свойства.
+        Анимацията е динамична, но и обогатяваща – за деца, които обичат природата, задават въпроси и искат да откриват.
+      </p>  
+        <!-- Там ги очакват забавни куизове, творчески предизвикателства и приключенски мисии, в които влизат в ролята на смели палеонтолози и изследователи.
+        <p>
+        <b>Едно джурасик приключение, в което търсят следи, решават загадки,</b> изследват фосили, и се спасяват от <b>Тиранозавър Рекс.</b> Ще наблюдават как <b>„вулкан“</b>изригва пред очите им! Докато се забавляват, ще научат защо динозаврите са изчезнали и как днес учените откриват тайните на техния свят.
+        </p>
+        Парти, което развива любопитството, екипността и смелостта — за деца, които обичат приключения, наука и въображение!
+        </p> -->
+        <b>✨Изберете това парти, ако:</b> детето ви мечтае да опознае света на животните, джунглата и да се почувства като истински откривател!
+      </p>
+
+      <!-- <h3>Какво включва пакетът:</h3>
+      <ul class="features">
+        <li>Тематична пиратска украса</li>
+        <li>Образователни игри за морски живот</li>
+        <li>Анимация + костюм на пират</li>
+        <li>Ролеви игри и съкровищница</li>
+        <li>Материали за творческа задача</li>
+      </ul> -->
+
+      <div class="price-box">Цена за два часа: 150 лв./125 евро</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="yr"></span> EcoFun Party</div>
+      <div style="font-size:13px;">Made with ✨</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
