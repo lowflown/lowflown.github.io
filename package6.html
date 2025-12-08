@@ -1,39 +1,158 @@
 <!doctype html>
 <html lang="bg">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Кулинарно парти – EcoFun Party</title>
-<style>
-:root{--bg:#fff8f3;--accent-1:#ff6b6b;--shadow:0 6px 20px rgba(28,30,33,0.08);font-family:Inter;}
-body{margin:0;background:linear-gradient(180deg,var(--bg),#fffdf8);}
-.container{max-width:900px;margin:0 auto;padding:32px}
-.banner{width:100%;height:300px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:32px}
-.banner img{width:100%;height:100%;object-fit:cover}
-section{background:white;padding:24px;border-radius:16px;box-shadow:var(--shadow);}
-a.back{color:var(--accent-1);font-weight:600;text-decoration:none}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Пакет — EcoFun Party</title>
+
+  <!-- SAME STYLE AS MAIN PAGE -->
+  <style>
+    :root{
+      --bg: #fff8f3;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent-1: #ff6b6b;
+      --accent-2: #ffd56b;
+      --accent-3: #6bd9ff;
+      --accent-4: #9b7bff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(28,30,33,0.08);
+      --ease: cubic-bezier(.2,.9,.3,1);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fffdf8);
+      color:#111;
+      line-height:1.45;
+    }
+    *{box-sizing:border-box}
+
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent-3),var(--accent-1));
+      color:white;font-weight:700;display:grid;place-items:center;
+      box-shadow:var(--shadow);
+    }
+    nav{display:flex;gap:18px}
+    nav a{color:#111;text-decoration:none;font-weight:600}
+    nav a.cta{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));
+      padding:10px 16px;color:#fff;border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    /* Banner */
+    .banner{
+      width:100%;height:660px;border-radius:18px;overflow:hidden;
+      box-shadow:var(--shadow);margin-bottom:32px;
+    }
+    .banner img{width:100%;height:100%;object-fit:cover;}
+
+    /* Package Content */
+    .package-card{
+      background:var(--card);
+      padding:28px;border-radius:18px;box-shadow:var(--shadow);
+    }
+    .package-card h2{margin-top:0;font-size:32px}
+    .package-card p{color:var(--muted);font-size:16px}
+
+    ul.features{
+      margin-top:16px;padding-left:18px;color:var(--muted);
+      line-height:1.5;
+    }
+
+    .price-box{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-3));
+      padding:14px 20px;border-radius:14px;
+      display:inline-block;font-size:20px;
+      font-weight:800;color:#111;margin-top:22px;
+      box-shadow:var(--shadow);
+    }
+
+    footer{
+      margin-top:36px;padding-top:18px;
+      border-top:1px dashed rgba(10,10,10,0.04);
+      color:var(--muted);display:flex;justify-content:space-between;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
 
-<a href="index.html" class="back">← Обратно</a>
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo">★</div>
+        <div>
+          <h1 style="margin:0;font-size:20px">EcoFun Party</h1>
+          <p style="margin:0;font-size:13px;color:var(--muted)">
+            С нас всеки рожден ден е приключение!
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#about">За Нас</a>
+        <a href="index.html#packages">Рождени дни</a>
+        <a href="index.html#contact" class="cta">Контакти</a>
+      </nav>
+    </header>
 
-<div class="banner">
- <img src="party_kitchen.jpg">
-</div>
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="party_kitchen.jpg" alt="Package Banner">
+    </div>
 
-<section>
-<h1>Детско кулинарно парти</h1>
+    <!-- PACKAGE DETAILS -->
+    <div class="package-card">
+      <h2>Детско кулинарно парти – здравословно и вкусно</h2>
+      <p>
+      <p>Ммм... вкусно, забавно и здравословно!
+        В нашата кулинарна работилничка децата се превръщат в малки майстори готвачи и приготвят вкусни изненади – без печка, но с много въображение и радост.
+        </p>
+        <p>
+        Ще приготвим здравословни рецепти и ще съставим тристепенно меню, което е лесно, красиво и вкусно!
+        Какво ще кажете за салата със сезонни зеленчуци, украсена с цветя?
+        А за барчета от ядки и сушени плодове, торта с бананов крем, зеленчукови шишчета или дори конкурс за най-оригинален сандвич с фермерски продукти?         
+        <p>
+        По време на игрите и готвенето децата откриват принципите на здравословното хранене, учат се да съчетават вкусове и цветове, да подреждат красиво и да споделят с усмивка.
+        Защото най-важното е не само да бъде полезно – а да бъде вкусно и вдъхновяващо! 💚
+        </p>
+        <p>
+        На финала ги очаква забавно състезание „Майстор готвач“ и, разбира се, голяма дегустация! 🍓
+        </p>
+        <p>
+        <b>✨Изберете това парти, ако:</b> вашето дете обича да готви, да твори с ръцете си и приготвя нещо специално за своите приятели и семейство!
+        </p>      
+      <p>
+        <b>🍴 Подходящо за: </b> деца от 5 до 12 години 
+      </p>
+      <p>
+        <b>
+        В цената са включени продуктите, нужните съдове и уреди. 
+        Може и без кетъринг!
+        </b>
+      </p>
+      <div class="price-box">Цена за два часа: 350 лв./175 евро</div>
+    </div>
 
-<p>Децата влизат в ролята на малки готвачи! Приготвят лесни и забавни ястия, украсяват, смесват, моделират и научават за здравословната храна.</p>
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="yr"></span> EcoFun Party</div>
+      <div style="font-size:13px;">Made with ✨</div>
+    </footer>
 
-<p>Включва: престилки, инструменти, материали, създаване на мини рецепти и творческа част.</p>
-
-<p>Подходящо: 4–10 години</p>
-</section>
-
-</div>
+  </div>
+  
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

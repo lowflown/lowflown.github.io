@@ -1,40 +1,152 @@
 <!doctype html>
 <html lang="bg">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Мисия Земя – EcoFun Party</title>
-<style>
-:root{--bg:#fff8f3;--accent-1:#ff6b6b;--shadow:0 6px 20px rgba(28,30,33,0.08);font-family:Inter;}
-body{margin:0;background:linear-gradient(180deg,var(--bg),#fffdf8);}
-.container{max-width:900px;margin:0 auto;padding:32px}
-.banner{width:100%;height:300px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:32px}
-.banner img{width:100%;height:100%;object-fit:cover}
-section{background:white;padding:24px;border-radius:16px;box-shadow:var(--shadow);}
-a.back{color:var(--accent-1);font-weight:600;text-decoration:none}
-h1{margin-top:0}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Пакет — EcoFun Party</title>
+
+  <!-- SAME STYLE AS MAIN PAGE -->
+  <style>
+    :root{
+      --bg: #fff8f3;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent-1: #ff6b6b;
+      --accent-2: #ffd56b;
+      --accent-3: #6bd9ff;
+      --accent-4: #9b7bff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(28,30,33,0.08);
+      --ease: cubic-bezier(.2,.9,.3,1);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fffdf8);
+      color:#111;
+      line-height:1.45;
+    }
+    *{box-sizing:border-box}
+
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent-3),var(--accent-1));
+      color:white;font-weight:700;display:grid;place-items:center;
+      box-shadow:var(--shadow);
+    }
+    nav{display:flex;gap:18px}
+    nav a{color:#111;text-decoration:none;font-weight:600}
+    nav a.cta{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));
+      padding:10px 16px;color:#fff;border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    /* Banner */
+    .banner{
+      width:100%;height:660px;border-radius:18px;overflow:hidden;
+      box-shadow:var(--shadow);margin-bottom:32px;
+    }
+    .banner img{width:100%;height:100%;object-fit:cover;}
+
+    /* Package Content */
+    .package-card{
+      background:var(--card);
+      padding:28px;border-radius:18px;box-shadow:var(--shadow);
+    }
+    .package-card h2{margin-top:0;font-size:32px}
+    .package-card p{color:var(--muted);font-size:16px}
+
+    ul.features{
+      margin-top:16px;padding-left:18px;color:var(--muted);
+      line-height:1.5;
+    }
+
+    .price-box{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-3));
+      padding:14px 20px;border-radius:14px;
+      display:inline-block;font-size:20px;
+      font-weight:800;color:#111;margin-top:22px;
+      box-shadow:var(--shadow);
+    }
+
+    footer{
+      margin-top:36px;padding-top:18px;
+      border-top:1px dashed rgba(10,10,10,0.04);
+      color:var(--muted);display:flex;justify-content:space-between;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
 
-<a href="index.html" class="back">← Обратно</a>
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo">★</div>
+        <div>
+          <h1 style="margin:0;font-size:20px">EcoFun Party</h1>
+          <p style="margin:0;font-size:13px;color:var(--muted)">
+            С нас всеки рожден ден е приключение!
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html#about">За Нас</a>
+        <a href="index.html#packages">Рождени дни</a>
+        <a href="index.html#contact" class="cta">Контакти</a>
+      </nav>
+    </header>
 
-<div class="banner">
- <img src="party_planet.jpg">
-</div>
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="party_planet.jpg" alt="Package Banner">
+    </div>
 
-<section>
-<h1>Мисия: Да спасим планетата Земя</h1>
+    <!-- PACKAGE DETAILS -->
+    <div class="package-card">
+      <h2>Мисия: Да спасим планетата Земя</h2>
+      <p>
+      <p>👽 Тревога! <b>Земята е под наблюдение от любопитни извънземни</b>, които искат да разберат дали хората заслужават да живеят на толкова красива планета. Но когато виждат боклуци, замърсени реки и изсечени гори, те решават да я „вземат за себе си“!
+        Само екипът от <b>деца – защитници на планетата</b> – може да докаже, че Земята е достойна да бъде спасена! 
+        </p>
+        <p>
+        <b>Децата преминават през мисии и предизвикателства:</b>
+        - сортират отпадъци и създават нови неща от стари материали;
+        - научават как да пестят вода и енергия;
+        -  спасяват животните в гората;
+        <p>
+        ♻️ А накрая изпращат „еко послание“ за извънземните – как хората могат да се променят. Всяка задача е весела, динамична и вдъхновяваща. Децата мислят, тичат, творят и работят в екип.
+        </p>
+        <p>
+        👽 Финал: Извънземните остават очаровани! Земята е спасена и всички получават грамота „Галактически пазител на планетата“.
+        </p>
+        <p>
+        <b>✨Изберете това парти, ако:</b> вашето дете обича загадки, състезания и мисии със смисъл!
+        </p>      
+      <p>
+        <b>Подходящо за: </b> деца от 5 до 11 години 
+      </p>
+      <div class="price-box">Цена за два часа: 250 лв./125 евро</div>
+    </div>
 
-<p>Децата поемат ролята на екологични супергерои. Те изпълняват задачи, които ги учат как да пазят природата – сортиране, откриване на отпадъци, творене от рециклирани материали, спасяване на животни.</p>
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="yr"></span> EcoFun Party</div>
+      <div style="font-size:13px;">Made with ✨</div>
+    </footer>
 
-<p>Включва: активни игри, екипни мисии, творческа работилница.</p>
-
-<p>Подходящо: 4–10 години</p>
-</section>
-
-</div>
+  </div>
+  
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
