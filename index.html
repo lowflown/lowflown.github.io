@@ -151,6 +151,69 @@
     }
   }
 
+      /* ===== GALLERY SLIDER ===== */
+    .gallery-section {
+      margin: 48px 0;
+    }
+
+    .gallery-section h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 16px;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .gallery-item {
+      min-width: 300px;
+      height: 220px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #111;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* arrows */
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .gallery-btn.left { left: 10px; }
+    .gallery-btn.right { right: 10px; }
+
+    /* mobile tweaks */
+    @media (max-width: 600px) {
+      .gallery-item {
+        min-width: 240px;
+        height: 180px;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -230,6 +293,29 @@
         • подготвяме динамични, креативни и образователни игри<br>
         • идваме на посочена от вас локация – у дома, в парти клуб, в училище, в парк или на открито</p>
       </p>
+    </section>
+
+        <!-- GALLERY -->
+    <section id="gallery" class="gallery-section">
+      <h2>Галерия</h2>
+      <p style="color:var(--muted);margin-bottom:18px;">
+        Моменти от нашите партита, игри и приключения
+      </p>
+
+      <div class="gallery-wrapper">
+        <button class="gallery-btn left" onclick="moveGallery(-1)">‹</button>
+
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-item">Снимка 1</div>
+          <div class="gallery-item">Снимка 2</div>
+          <div class="gallery-item">Снимка 3</div>
+          <div class="gallery-item">Снимка 4</div>
+          <div class="gallery-item">Снимка 5</div>
+          <div class="gallery-item">Снимка 6</div>
+        </div>
+
+        <button class="gallery-btn right" onclick="moveGallery(1)">›</button>
+      </div>
     </section>
 
 <section id="packages">
@@ -369,6 +455,19 @@
         window.location.href = `package${i + 1}.html`;
       });
     });
+
+    let galleryIndex = 0;
+
+    function moveGallery(direction) {
+      const track = document.getElementById("galleryTrack");
+      const itemWidth = track.children[0].offsetWidth + 16; // card + gap
+      galleryIndex += direction;
+
+      const maxIndex = track.children.length - 1;
+      galleryIndex = Math.max(0, Math.min(galleryIndex, maxIndex));
+
+      track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
+    }
   </script>
 </body>
 </html>
