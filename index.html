@@ -186,6 +186,13 @@
       font-size: 18px;
       flex-shrink: 0;
     }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:18px;
+    }
+
 
     /* arrows */
     .gallery-btn {
@@ -306,7 +313,7 @@
         <button class="gallery-btn left" onclick="moveGallery(-1)">‹</button>
 
         <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-item">Снимка 1</div>
+          <div class="gallery-item"><img src="galeriq1.jpg"></div>
           <div class="gallery-item">Снимка 2</div>
           <div class="gallery-item">Снимка 3</div>
           <div class="gallery-item">Снимка 4</div>
