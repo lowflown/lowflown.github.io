@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Запитване — EcoFun Party</title>
+
+  <style>
+    :root{
+      --bg:#fff8f3;
+      --card:#ffffff;
+      --muted:#6b6b6b;
+      --accent-1:#ff6b6b;
+      --accent-3:#6bd9ff;
+      --shadow:0 6px 20px rgba(28,30,33,0.08);
+      font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fffdf8);
+      color:#111;
+    }
+    .container{max-width:720px;margin:0 auto;padding:32px}
+    h1{margin-top:0}
+    form{
+      background:var(--card);
+      padding:28px;
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    label{font-weight:600;font-size:14px}
+    input,select,textarea{
+      padding:12px;
+      border-radius:10px;
+      border:1px solid #ddd;
+      font-size:14px;
+    }
+    textarea{min-height:120px;resize:vertical}
+    button{
+      margin-top:10px;
+      padding:14px;
+      border-radius:14px;
+      border:none;
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));
+      color:white;
+      font-weight:800;
+      font-size:16px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Форма за запитване</h1>
+    <p style="color:var(--muted)">
+      Попълнете формата и ще се свържем с вас възможно най-скоро.
+    </p>
+
+    <!-- FORM -->
+    <form action="https://formspree.io/f/xpqwvrkl" method="POST">
+
+      <label>Име на родител:</label>
+      <input type="text" name="parent_name" required>
+
+      <label>Тема:</label>
+      <select name="theme" required>
+        <option value="">Изберете тема</option>
+        <option>Пиратско приключение</option>
+        <option>Парти в джунглата</option>
+        <option>Дино приключение</option>
+        <option>Приказен свят</option>
+        <option>Детективско приключение</option>
+      </select>
+
+      <label>Възраст на детето:</label>
+      <input type="number" name="child_age" min="1" required>
+
+      <label>Брой участници (деца):</label>
+      <input type="number" name="children_count" min="1" required>
+
+      <label>Записване / Допълнителна информация:</label>
+      <textarea name="message"></textarea>
+
+      <!-- Email destination -->
+      <input type="hidden" name="_replyto" value="ecofunparty.sofia@gmail.com">
+
+      <button type="submit">Изпрати</button>
+    </form>
+  </div>
+</body>
+</html>
