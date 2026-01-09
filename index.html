@@ -97,6 +97,18 @@
 
     footer{margin-top:36px;padding-top:18px;border-top:1px dashed rgba(10,10,10,0.04);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
 
+    .packages-intro{
+      background: linear-gradient(
+        135deg,
+        rgba(155,123,255,0.12),
+        rgba(107,217,255,0.12)
+      );
+      padding:24px 28px;
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+
+
     @media (max-width:900px){
       .contact-hero{grid-template-columns:1fr}
     }
@@ -328,7 +340,7 @@
 
 <section id="packages">
   <div class="section-title">
-    <div>
+    <div class="packages-intro">
       <h2 style="margin:0">РОЖДЕНИ ДНИ</h2>
       <p style="margin:6px 0 0;color:var(--muted)">
         <b>Тематични детски рождени дни – учене чрез игра и много приключения</b>
@@ -476,18 +488,28 @@
       });
     });
 
-    let galleryIndex = 0;
+    const track = document.querySelector(".gallery-track");
+    const slides = document.querySelectorAll(".gallery-item");
+    const prevBtn = document.querySelector(".gallery-prev");
+    const nextBtn = document.querySelector(".gallery-next");
 
-    function moveGallery(direction) {
-      const track = document.getElementById("galleryTrack");
-      const itemWidth = track.children[0].offsetWidth + 16; // card + gap
-      galleryIndex += direction;
+    let index = 0;
+    const total = slides.length;
 
-      const maxIndex = track.children.length - 1;
-      galleryIndex = Math.max(0, Math.min(galleryIndex, maxIndex));
-
-      track.style.transform = `translateX(-${galleryIndex * itemWidth}px)`;
+    function updateGallery(){
+      track.style.transform = `translateX(-${index * 100}%)`;
     }
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % total;   // loop forward
+      updateGallery();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + total) % total; // loop backward
+      updateGallery();
+    });
+
   </script>
 </body>
 </html>
