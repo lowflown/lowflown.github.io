@@ -358,7 +358,7 @@
       </p>
 
       <div class="gallery-wrapper">
-        <button class="gallery-prev">‹</button>
+        <button class="gallery-btn left gallery-prev">‹</button>
 
         <div class="gallery-track" id="galleryTrack">
           <div class="gallery-item"><img src="galeriq1.jpg" alt=""></div>
@@ -369,7 +369,7 @@
           <div class="gallery-item"><img src="ppvitosha.jpg" alt=""></div>
         </div>
 
-        <button class="gallery-next">›</button>
+        <button class="gallery-btn right gallery-next">›</button>
       </div>
     </section>
 
@@ -531,32 +531,29 @@
     });
   });
 
-  /* ===== GALLERY (FIXED & LOOPING) ===== */
   const track = document.querySelector(".gallery-track");
   const items = document.querySelectorAll(".gallery-item");
   const prevBtn = document.querySelector(".gallery-prev");
   const nextBtn = document.querySelector(".gallery-next");
 
   if (track && items.length && prevBtn && nextBtn) {
-    const itemWidth = items[0].offsetWidth + 16; // width + gap
+    let index = 0;
+
+    function scrollToIndex(i) {
+      track.scrollTo({
+        left: items[i].offsetLeft,
+        behavior: "smooth"
+      });
+    }
 
     nextBtn.addEventListener("click", () => {
-      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
-        track.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        track.scrollBy({ left: itemWidth, behavior: "smooth" });
-      }
+      index = (index + 1) % items.length;
+      scrollToIndex(index);
     });
 
     prevBtn.addEventListener("click", () => {
-      if (track.scrollLeft <= 5) {
-        track.scrollTo({
-          left: track.scrollWidth,
-          behavior: "smooth"
-        });
-      } else {
-        track.scrollBy({ left: -itemWidth, behavior: "smooth" });
-      }
+      index = (index - 1 + items.length) % items.length;
+      scrollToIndex(index);
     });
   }
 </script>
