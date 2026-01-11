@@ -512,47 +512,54 @@
   </div>
 
   <script>
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      })
-    },{threshold:0.12});
-    document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    })
+  },{threshold:0.12});
+  document.querySelectorAll('[data-animate]').forEach(el=>observer.observe(el));
 
-    document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-    document.querySelectorAll(".card").forEach((card, i) => {
-      card.style.cursor = "pointer";
-
+  document.querySelectorAll(".card").forEach((card, i) => {
+    card.style.cursor = "pointer";
     card.addEventListener("click", () => {
-        window.location.href = `package${i + 1}.html`;
-      });
+      window.location.href = `package${i + 1}.html`;
     });
+  });
 
-    const track = document.querySelector(".gallery-track");
-    const slides = document.querySelectorAll(".gallery-item");
-    const prevBtn = document.querySelector(".gallery-prev");
-    const nextBtn = document.querySelector(".gallery-next");
+  /* ===== GALLERY (FIXED & LOOPING) ===== */
+  const track = document.querySelector(".gallery-track");
+  const items = document.querySelectorAll(".gallery-item");
+  const prevBtn = document.querySelector(".gallery-prev");
+  const nextBtn = document.querySelector(".gallery-next");
 
-    let index = 0;
-    const total = slides.length;
-
-    function updateGallery(){
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
+  if (track && items.length && prevBtn && nextBtn) {
+    const itemWidth = items[0].offsetWidth + 16; // width + gap
 
     nextBtn.addEventListener("click", () => {
-      index = (index + 1) % total;   // loop forward
-      updateGallery();
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
+        track.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        track.scrollBy({ left: itemWidth, behavior: "smooth" });
+      }
     });
 
     prevBtn.addEventListener("click", () => {
-      index = (index - 1 + total) % total; // loop backward
-      updateGallery();
+      if (track.scrollLeft <= 5) {
+        track.scrollTo({
+          left: track.scrollWidth,
+          behavior: "smooth"
+        });
+      } else {
+        track.scrollBy({ left: -itemWidth, behavior: "smooth" });
+      }
     });
+  }
+</script>
 
   </script>
 </body>
