@@ -583,12 +583,10 @@
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  document.querySelectorAll(".card").forEach((card, i) => {
-    card.style.cursor = "pointer";
-    card.addEventListener("click", () => {
-      window.location.href = `package${i + 1}.html`;
-    });
+  document.querySelectorAll(".card:not(.special-package)").forEach((card) => {
+  card.style.cursor = "pointer";
   });
+
 
   const track = document.querySelector(".gallery-track");
   const items = document.querySelectorAll(".gallery-item");
