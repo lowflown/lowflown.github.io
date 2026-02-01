@@ -345,7 +345,437 @@
         <b>Eco Fun Party</b> е малък, но професионален бранд за <b>детски рождени дни, работилнички и образователни еко програми.</b>
         Създаваме преживявания, които съчетават <b>забавление, творчество и учене чрез игра</b>, така че всяко дете да се почувства <b>уверено, любопитно и вдъхновено.</b></p>
         <p>
-        Зад идеята за Eco Fun Party, съм аз – Антония Чиликова.
+        Зад идеята за Eco Fun Party, съм аз – Антония Ч<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Пакет — EcoFun Party</title>
+
+  <!-- SAME STYLE AS MAIN PAGE -->
+  <style>
+    :root{
+      --bg: #fff8f3;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent-1: #5fbb71;
+      --accent-2: #5fbb71;
+      --accent-3: #5fbb71;
+      --accent-4: #9b7bff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(28,30,33,0.08);
+      --ease: cubic-bezier(.2,.9,.3,1);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fffdf8);
+      color:#111;
+      line-height:1.45;
+    }
+    *{box-sizing:border-box}
+
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:transparent;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+    nav{display:flex;gap:18px}
+    nav a{color:#111;text-decoration:none;font-weight:600}
+    nav a.cta{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));
+      padding:10px 16px;color:#fff;border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    /* Banner */
+    .banner{
+      width:100%;height:660px;border-radius:18px;overflow:hidden;
+      box-shadow:var(--shadow);margin-bottom:32px;
+    }
+    .banner img{width:100%;height:100%;object-fit:cover;}
+
+    /* Package Content */
+    .package-card{
+      background:var(--card);
+      padding:28px;border-radius:18px;box-shadow:var(--shadow);
+    }
+    .package-card h2{margin-top:0;font-size:32px}
+    .package-card p{color:var(--muted);font-size:16px}
+
+    ul.features{
+      margin-top:16px;padding-left:18px;color:var(--muted);
+      line-height:1.5;
+    }
+
+    .price-box{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-3));
+      padding:14px 20px;border-radius:14px;
+      display:inline-block;font-size:20px;
+      font-weight:800;color:#ffffff;margin-top:22px;
+      box-shadow:var(--shadow);
+    }
+
+    footer{
+      margin-top:36px;padding-top:18px;
+      border-top:1px dashed rgba(10,10,10,0.04);
+      color:var(--muted);display:flex;justify-content:space-between;
+    }
+    /* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+@media (max-width: 768px){
+
+  .container{
+    padding:20px;
+  }
+
+  header{
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  nav{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .banner{
+    height:220px;
+  }
+
+  .hero h2{
+    font-size:24px;
+  }
+
+  .package-card h2{
+    font-size:26px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card img{
+    height:180px;
+  }
+
+  .contact-hero{
+    grid-template-columns:1fr;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="/images/logo.jpg"></div>
+        <div>
+          <h1 style="margin:0;font-size:20px">EcoFun Party</h1>
+          <p style="margin:0;font-size:13px;color:var(--muted)">
+            С нас всеки рожден ден е приключение!
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a href="/index.html#about">За Нас</a>
+        <a href="/index.html#packages">Рождени дни</a>
+        <a href="/index.html#contact" class="cta">Контакти</a>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="/images/party_jungle.jpg" alt="Package Banner">
+    </div>
+
+    <!-- PACKAGE DETAILS -->
+    <div class="package-card">
+      <h2>Изследователи на джунглата</h2>
+      <p>
+        Приключение за малки любители на дивия свят и животните!
+        Децата влизат в ролята на изследователи, научават любопитни факти за тропическите гори, правят маски на животни, танцуват, решават загадки и преминават през опасни „реки“, пълни с крокодили, за да открия магическото цвете с лечебни свойства.
+        Анимацията е динамична, но и обогатяваща – за деца, които обичат природата, задават въпроси и искат да откриват.
+      </p>  
+        <b>✨Изберете това парти, ако:</b> детето ви мечтае да опознае света на животните, джунглата и да се почувства като истински откривател!
+      </p>
+      <p>
+        Подходящо за деца:  от 4 до 10 години.
+      </p>
+      <div class="price-box">Цена за два часа: 150 лв./125 евро</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="yr"></span> EcoFun Party</div>
+      <div style="font-size:13px;">Made with ✨</div>
+    </footer><!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Пакет — EcoFun Party</title>
+
+  <!-- SAME STYLE AS MAIN PAGE -->
+  <style>
+    :root{
+      --bg: #fff8f3;
+      --card: #ffffff;
+      --muted: #6b6b6b;
+      --accent-1: #5fbb71;
+      --accent-2: #5fbb71;
+      --accent-3: #5fbb71;
+      --accent-4: #9b7bff;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(28,30,33,0.08);
+      --ease: cubic-bezier(.2,.9,.3,1);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#fffdf8);
+      color:#111;
+      line-height:1.45;
+    }
+    *{box-sizing:border-box}
+
+    .container{max-width:1100px;margin:0 auto;padding:32px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:18px 0;
+    }
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:transparent;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+    nav{display:flex;gap:18px}
+    nav a{color:#111;text-decoration:none;font-weight:600}
+    nav a.cta{
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-3));
+      padding:10px 16px;color:#fff;border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+
+    /* Banner */
+    .banner{
+      width:100%;height:660px;border-radius:18px;overflow:hidden;
+      box-shadow:var(--shadow);margin-bottom:32px;
+    }
+    .banner img{width:100%;height:100%;object-fit:cover;}
+
+    /* Package Content */
+    .package-card{
+      background:var(--card);
+      padding:28px;border-radius:18px;box-shadow:var(--shadow);
+    }
+    .package-card h2{margin-top:0;font-size:32px}
+    .package-card p{color:var(--muted);font-size:16px}
+
+    ul.features{
+      margin-top:16px;padding-left:18px;color:var(--muted);
+      line-height:1.5;
+    }
+
+    .price-box{
+      background:linear-gradient(90deg,var(--accent-2),var(--accent-3));
+      padding:14px 20px;border-radius:14px;
+      display:inline-block;font-size:20px;
+      font-weight:800;color:#ffffff;margin-top:22px;
+      box-shadow:var(--shadow);
+    }
+
+    footer{
+      margin-top:36px;padding-top:18px;
+      border-top:1px dashed rgba(10,10,10,0.04);
+      color:var(--muted);display:flex;justify-content:space-between;
+    }
+
+    .special-package{
+      padding: 0; /* we control padding inside */
+    }
+
+    .special-inner{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 18px;
+      align-items: center;
+    }
+
+    .special-inner img{
+      width: 100%;
+      height: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .special-text h3{
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .special-text p{
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* =========================
+   MOBILE RESPONSIVENESS
+   ========================= */
+@media (max-width: 768px){
+
+  .container{
+    padding:20px;
+  }
+
+  header{
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  nav{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .banner{
+    height:220px;
+  }
+
+  .hero h2{
+    font-size:24px;
+  }
+
+  .package-card h2{
+    font-size:26px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card img{
+    height:180px;
+  }
+
+  .contact-hero{
+    grid-template-columns:1fr;
+  }
+
+  .special-inner{
+    grid-template-columns: 1fr;
+  }
+
+  .special-inner img{
+    max-height: 200px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="/images/logo.jpg"></div>
+        <div>
+          <h1 style="margin:0;font-size:20px">EcoFun Party</h1>
+          <p style="margin:0;font-size:13px;color:var(--muted)">
+            С нас всеки рожден ден е приключение!
+          </p>
+        </div>
+      </div>
+      <nav>
+        <a href="/index.html#about">За Нас</a>
+        <a href="/index.html#packages">Рождени дни</a>
+        <a href="/index.html#contact" class="cta">Контакти</a>
+      </nav>
+    </header>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="/images/party_jungle.jpg" alt="Package Banner">
+    </div>
+
+    <!-- PACKAGE DETAILS -->
+    <div class="package-card">
+      <h2>Изследователи на джунглата</h2>
+      <p>
+        Приключение за малки любители на дивия свят и животните!
+        Децата влизат в ролята на изследователи, научават любопитни факти за тропическите гори, правят маски на животни, танцуват, решават загадки и преминават през опасни „реки“, пълни с крокодили, за да открия магическото цвете с лечебни свойства.
+        Анимацията е динамична, но и обогатяваща – за деца, които обичат природата, задават въпроси и искат да откриват.
+      </p>  
+        <b>✨Изберете това парти, ако:</b> детето ви мечтае да опознае света на животните, джунглата и да се почувства като истински откривател!
+      </p>
+      <p>
+        Подходящо за деца:  от 4 до 10 години.
+      </p>
+      <div class="price-box">Цена за два часа: 150 лв./125 евро</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="yr"></span> EcoFun Party</div>
+      <div style="font-size:13px;">Made with ✨</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+  </div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+иликова.
         По образование съм <b>биолог</b> и <b>експерт по туризъм</b>, а по професия – <b>организатор на събития</b>. Любовта ми към децата и желанието да предам знанията и уважението си към природата са в основата на тематичните еко рождени дни, които създавам.
         </p>
         <p>
@@ -482,6 +912,21 @@
       </div>
     </a>
   </div>
+
+  <div class="card special-package">
+  <div class="special-inner">
+    <img src="insert-image-here.jpg" alt="Special package">
+
+    <div class="special-text">
+      <h3>Изненада за малките откриватели</h3>
+      <p>
+        Кратко, ясно и продаващо описание на пакета.
+        Тук може да обясниш какво е по-различното и защо е специално.
+      </p>
+    </div>
+  </div>
+</div>
+
 </section>
 
 <section id="rabotilnichki" class="workshops-teaser">
