@@ -581,34 +581,58 @@
   card.style.cursor = "pointer";
   });
 
-
   const track = document.querySelector(".gallery-track");
-  const items = document.querySelectorAll(".gallery-item");
+  const viewport = document.querySelector(".gallery-viewport");
   const prevBtn = document.querySelector(".gallery-prev");
   const nextBtn = document.querySelector(".gallery-next");
 
-  let index = 0;
-  const visibleCount = Math.floor(
-    document.querySelector(".gallery-viewport").offsetWidth /
-    items[0].offsetWidth
-  );
+  let items = Array.from(track.children);
+  const gap = 18;
+  const itemWidth = items[0].offsetWidth + gap;
+  const visibleCount = Math.floor(viewport.offsetWidth / items[0].offsetWidth);
 
-  function update() {
-    const itemWidth = items[0].offsetWidth + 18; // image width + gap
+  // clone edges
+  for (let i = 0; i < visibleCount; i++) {
+    track.appendChild(items[i].cloneNode(true));
+    track.insertBefore(
+      items[items.length - 1 - i].cloneNode(true),
+      track.firstChild
+    );
+  }
+
+  items = Array.from(track.children);
+
+  let index = visibleCount;
+  track.style.transform = `translateX(-${index * itemWidth}px)`;
+
+  function move() {
+    track.style.transition = "transform 0.45s ease";
     track.style.transform = `translateX(-${index * itemWidth}px)`;
   }
 
   nextBtn.addEventListener("click", () => {
-    if (index < items.length - visibleCount) {
-      index++;
-      update();
+    index++;
+    move();
+
+    if (index === items.length - visibleCount) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = visibleCount;
+        track.style.transform = `translateX(-${index * itemWidth}px)`;
+      }, 460);
     }
   });
 
   prevBtn.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      update();
+    index--;
+    move();
+
+    if (index === 0) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = items.length - visibleCount * 2;
+        track.style.transform = `translateX(-${index * itemWidth}px)`;
+      }, 460);
     }
   });
 </script>
