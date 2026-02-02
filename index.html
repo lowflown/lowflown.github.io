@@ -258,7 +258,13 @@
   }
   
       /* ===== GALLERY SLIDER ===== */
-    .gallery-section {
+    .gallery-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    
+      .gallery-section {
       margin: 48px 0;
     }
 
@@ -279,7 +285,7 @@
     }
 
     .gallery-item {
-      min-width: 300px;
+      min-width: 100%;
       height: 220px;
       background: linear-gradient(135deg, var(--accent-2), var(--accent-3));
       border-radius: 18px;
@@ -291,12 +297,14 @@
       color: #111;
       font-size: 18px;
       flex-shrink: 0;
+      flex: 0 0 280px;
     }
     .gallery-item img{
       width:100%;
-      height:100%;
+      height: auto;
+      display: block;
       object-fit:cover;
-      border-radius:18px;
+      border-radius:16px;
     }
 
 
@@ -340,7 +348,7 @@
         </div>
       </div>
       <nav>
-        <a href="/#about"><b>За Нас</b></a>
+        <a href="/about.html"><b>За Нас</b></a>
         <a href="/#packages"><b>Рождени дни</b></a>
         <a href="/rabotilnichki.html"><strong>Работилнички</strong></a>
         <a href="/#contact" class="cta">Контакти</a>
@@ -500,34 +508,6 @@
   <a href="rabotilnichki.html" class="cta-btn">Разгледай работилничките</a>
 </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="about-section">
-      <h2>За Нас</h2>
-      <p>
-        <p>
-        <b>Eco Fun Party</b> е малък, но професионален бранд за <b>детски рождени дни, работилнички и образователни еко програми.</b>
-        Създаваме преживявания, които съчетават <b>забавление, творчество и учене чрез игра</b>, така че всяко дете да се почувства <b>уверено, любопитно и вдъхновено.</b></p>
-        <p>
-        Зад идеята за Eco Fun Party, съм аз – Антония Чиликова.
-        По образование съм <b>биолог</b> и <b>експерт по туризъм</b>, а по професия – <b>организатор на събития</b>. Любовта ми към децата и желанието да предам знанията и уважението си към природата са в основата на тематичните еко рождени дни, които създавам.
-        </p>
-        <p>
-        Работата ми с деца винаги е била мястото, в което влагам най-много сърце. За мен детският празник не е просто анимация, а преживяване, което носи смях, знание и вдъхновение.        </p>
-        <p>
-        Повече от <b>20 години</b> разработвам детски еко програми, лагери и работилнички. Сред най-успешните ми инициативи са лагерите <b>„Ваканция на село“</b> в Родопите и <b>ботаническите лагери</b> в София.
-        </p>
-        <p>
-        Днес работя с <b>малък екип от аниматори и консултанти</b> в различни научни области, за да може всяка тема да бъде подготвена с професионализъм, грижа и внимание към всяко дете.
-        </p>
-        <p><b>Как работим?</b><br>
-        • работим по метода „учене чрез игра“<br>
-        • адаптираме сценария според възрастта и интересите<br>
-        • използваме безопасни материали и тематичен реквизит<br>
-        • подготвяме динамични, креативни и образователни игри<br>
-        • идваме на посочена от вас локация – у дома, в парти клуб, в училище, в парк или на открито</p>
-      </p>
-    </section>
-
         <!-- GALLERY -->
     <section id="gallery" class="gallery-section">
       <h2>Галерия</h2>
@@ -537,7 +517,8 @@
 
       <div class="gallery-wrapper">
         <button class="gallery-btn left gallery-prev">‹</button>
-
+        
+      <div class="gallery-viewport">  
         <div class="gallery-track" id="galleryTrack">
           <div class="gallery-item"><img src="/images/galeriq1.jpg" alt=""></div>
           <div class="gallery-item"><img src="/images/artrabotilnichka.jpg" alt=""></div>
@@ -546,7 +527,7 @@
           <div class="gallery-item"><img src="/images/botanicheskaigra.jpg" alt=""></div>
           <div class="gallery-item"><img src="/images/ppvitosha.jpg" alt=""></div>
         </div>
-
+      </div>  
         <button class="gallery-btn right gallery-next">›</button>
       </div>
     </section>
@@ -604,26 +585,30 @@
   const prevBtn = document.querySelector(".gallery-prev");
   const nextBtn = document.querySelector(".gallery-next");
 
-  if (track && items.length && prevBtn && nextBtn) {
-    let index = 0;
+  let index = 0;
+  const visibleCount = Math.floor(
+    document.querySelector(".gallery-viewport").offsetWidth /
+    items[0].offsetWidth
+  );
 
-    function scrollToIndex(i) {
-      track.scrollTo({
-        left: items[i].offsetLeft,
-        behavior: "smooth"
-      });
-    }
-
-    nextBtn.addEventListener("click", () => {
-      index = (index + 1) % items.length;
-      scrollToIndex(index);
-    });
-
-    prevBtn.addEventListener("click", () => {
-      index = (index - 1 + items.length) % items.length;
-      scrollToIndex(index);
-    });
+  function update() {
+    const itemWidth = items[0].offsetWidth + 18; // image width + gap
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
   }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < items.length - visibleCount) {
+      index++;
+      update();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      update();
+    }
+  });
 </script>
 
   </script>
