@@ -335,6 +335,17 @@
         font-size: 16px;
       }
     }
+
+    .lang-btn{
+      border:0;
+      background:white;
+      padding:8px 14px;
+      border-radius:12px;
+      font-weight:800;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
   </style>
 </head>
 <body>
@@ -347,8 +358,9 @@
           <p class="tag"><b></b></p>
         </div>
       </div>
+      <button id="langToggle" class="lang-btn">EN</button>
       <nav>
-        <a href="/about.html"><b>За нас</b></a>
+        <a href="/about.html" ><b>За нас</b></a>
         <a href="/#packages"><b>Рождени дни</b></a>
         <a href="/rabotilnichki.html"><strong>Работилнички</strong></a>
         <a href="/#contact" class="cta">Контакти</a>
@@ -361,7 +373,7 @@
 
     <section class="hero">
       <div class="hero-card" >
-        <h2 style="color: #5fbb71;">Добре дошли в света на Eco Fun Party!</h2>
+        <h2 style="color: #5fbb71;" data-i18n="hero_title">Добре дошли в света на Eco Fun Party!</h2>
         <p><b>Ние от Eco Fun Party</b> организираме тематични детски рождени дни, работилнички и образователни събития, създадени по метода учене чрез игра и преживяване.
           Нашите програми и анимация са забавни, смислени и различни - развиват въображението и любознателността и възпитават любов към природата.
         </p>
